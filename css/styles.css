@@ -98,7 +98,7 @@ NAVIGATION (TOPNAV)
   display: inline-block;
 }
 
-.topnav a, .topnav li {
+.topnav a, .topnav div {
   display: block;
   padding: 14px 16px;
   font-size: 17px;
@@ -110,9 +110,11 @@ NAVIGATION (TOPNAV)
   display: none;
 }
 
-.topnav a:hover, .topnav li:hover {
+.topnav a:hover, .topnav div:hover {
   text-decoration: underline;
   color: #fff;
+  border: 0.05rem solid #fff;
+  border-radius: 5%;
 }
 
 .topnav a.active {
