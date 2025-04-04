@@ -5,20 +5,26 @@
   <meta name="description" content="About the creator of Buffy the Vampire Slayer." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="./img/buffy_logo.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>About - Buffy the Vampire Slayer Fan Project</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-  <nav class="topnav" id="topNav" aria-label="Main navigation">
-    <header>
-      <a href="./index.html"><h1>Buffy the Vampire Slayer</h1></a>
-    </header>
-      <ul>
-        <li><a href="./characters.html">Characters</a></li>
-        <li><a href="./synopsis.html">Plot/Synopsis</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
-    </nav>
+<nav class="topnav" id="myTopnav" aria-label="Main navigation">
+  <header>
+    <a href="./index.html"><h1>Buffy the Vampire Slayer</h1></a>
+  </header>
+  
+  <a href="javascript:void(0);" class="icon" id="menuToggleButton">
+    <i class="fa fa-bars"></i>
+  </a>
+
+  <ul>
+    <li><a href="./characters.html">Characters</a></li>
+    <li><a href="./synopsis.html">Plot/Synopsis</a></li>
+    <li><a href="./about.html">About</a></li>
+  </ul>
+</nav>
   <main>
     <article>
       <h2>- About the Creator -</h2>
@@ -31,7 +37,8 @@
       </header>
       <figure class="character-figure">
         <img src="./img/whedon.webp" alt="Joss Whedon profile head-shot" title="Photo Credit: https://media.wired.co.uk/photos/606db647a876dd2203a64c0f/master/w_1600%2Cc_limit/Whedon1.jpg">
-        <figcaption class="character-figcaption">Joss Whedon, The Creator behind Buffy the Vampire Slayer</figcaption>
+        <figcaption class="character-figcaption">Joss Whedon, The Creator behind Buffy the Vampire Slayer | Photo Credit: Wired
+        </figcaption>
       </figure>
       <p>
         Joss Whedon is an American filmmaker known for creating strong female characters and
@@ -59,5 +66,6 @@
   <footer>
     <p>&copy; 2025 Buffy the Vampire Slayer - Fan Project</p>
   </footer>
+  <script type="module" src="./index.js"></script>
 </body>
 </html>

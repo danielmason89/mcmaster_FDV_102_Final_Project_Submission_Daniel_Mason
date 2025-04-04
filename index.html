@@ -10,16 +10,23 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-  <nav class="topnav" id="topNav" aria-label="Main navigation">
-    <header>
-      <a href="./index.html"><h1>Buffy the Vampire Slayer</h1></a>
-    </header>
-      <ul>
-        <li><a href="./characters.html">Characters</a></li>
-        <li><a href="./synopsis.html">Plot/Synopsis</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
-    </nav>
+
+<nav class="topnav" id="myTopnav" aria-label="Main navigation">
+  <header>
+    <a href="./index.html"><h1>Buffy the Vampire Slayer</h1></a>
+  </header>
+  
+  <a href="javascript:void(0);" class="icon" id="menuToggleButton">
+    <i class="fa fa-bars"></i>
+  </a>
+
+  <ul>
+    <li><a href="./characters.html">Characters</a></li>
+    <li><a href="./synopsis.html">Plot/Synopsis</a></li>
+    <li><a href="./about.html">About</a></li>
+  </ul>
+</nav>
+
   <main class="main-content">
     <section class="left-column">
       <header class="main-header">
@@ -35,7 +42,7 @@
     </section>
       <section class="right-column">
         <figure>
-          <img src="./img/buff_group_photo.webp" alt="Buffy, her friends, and associates standing together">
+          <img src="./img/buff_group_photo.webp" alt="Buffy, her friends, and associates standing together" title="Photo Credit: https://www.usatoday.com/story/life/entertainthis/2016/03/22/magical-casts-buffy-and-charmed-reunited-together/82109980/">
           <figcaption>Buffy Summers and the Gang | Photo Credit: Online USA/Getty Images</figcaption>
         </figure>
       </section>
@@ -44,5 +51,6 @@
   <footer>
     <p>&copy; 2025 Buffy the Vampire Slayer - Fan Project </p>
   </footer>
+  <script type="module" src="./index.js"></script>
 </body>
 </html>

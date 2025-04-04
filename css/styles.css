@@ -21,33 +21,57 @@
     text-align: center;
     margin-bottom: 1rem;
   }
+
+  li {
+    list-style: none;
+  }
   
-  /* Header and Nav */
-  .topnav{
+.topnav {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   padding: 1rem;
   overflow: hidden;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  nav a {
-    color: #ffcc00;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+.topnav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav ul li {
+  display: inline-block;
+}
+
+.topnav a {
+  display: block;
+  padding: 14px 16px;
+  font-size: 17px;
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.topnav a.active {
+  background-color: #ffcc00;
+  color: #000;
+}
+
   /* Main content area */
   main {
     margin: 0 auto;
@@ -163,7 +187,7 @@ body {
 
   figure img { 
     width: auto;
-    height: 45vh;
+    height: 40vh;
     border-radius: 5%;
   }
 }
@@ -203,7 +227,7 @@ body {
 
     .character-figure img {
       width: 100%;
-      height: auto;
+      height: fit-content;
       border-radius: 4px;
     }
 
@@ -222,6 +246,7 @@ body {
     }
 
 @media (max-width: 600px) {
+
   .character-container {
     grid-template-columns: 1fr;
   }
@@ -232,13 +257,43 @@ body {
 }
 
 @media (min-width: 768px) {
+
   .character-article {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Plot Page CSS */
+@media (max-width: 750px) {
+    .topnav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  .topnav ul {
+    display: none; 
+    width: 100%;
+  }
+
+  .topnav .icon {
+    display: block; 
+  }
+
+ .topnav.responsive ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .topnav.responsive ul li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Plot Page CSS */
 .plot-main {
   height: auto;
 }
