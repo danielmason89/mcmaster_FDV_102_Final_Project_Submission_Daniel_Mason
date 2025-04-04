@@ -1,31 +1,80 @@
-/* Global reset */
+/* 
+==========================================================
+GLOBAL RESET
+==========================================================
+*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Typography and base styles */
-  body {
-    align-items: center;
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    color: #333;
-    background-color: #ededed;
-    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffcc00' fill-opacity='0.85'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-size: cover;
-    background-attachment: fixed;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
+/* 
+==========================================================
+TYPOGRAPHY & BASE STYLES
+==========================================================
+*/
+body {
+  align-items: center;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #ededed;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffcc00' fill-opacity='0.85'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
+}
 
-  li {
-    list-style: none;
-  }
-  
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  color: #fff; 
+}
+
+/* 
+==========================================================
+LAYOUT: HEADER, MAIN, FOOTER
+==========================================================
+*/
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 
+==========================================================
+NAVIGATION (TOPNAV)
+==========================================================
+*/
 .topnav {
   display: flex;
   align-items: center;
@@ -72,199 +121,141 @@
   color: #000;
 }
 
-  /* Main content area */
-  main {
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 1rem;
+/* 
+==========================================================
+MAIN CONTENT (GRID)
+==========================================================
+*/
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "first second"
+    "third third";
+  grid-gap: 1rem;
+  padding: 1rem;
+  justify-items: center;
+}
+
+.first-column {
+  grid-area: first;
+}
+
+.second-column {
+  grid-area: second;
+}
+
+.third-column {
+  grid-area: third;
+}
+
+.main-header {
+  padding: 2rem;
+  border-radius: 5%;
+  text-align: center;
+  color: black;
+  font-size: 2.5rem;
+  padding-top: 6rem;
+}
+
+.main-paragraph {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 
+==========================================================
+IMAGES & FIGURES
+==========================================================
+*/
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 55vh;
+  align-items: center;
+  display: block;
+  border-radius: 5%;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+/* 
+==========================================================
+MEDIA QUERIES
+==========================================================
+*/
+
+/* 
+---------------------------------
+>= 1200px
+---------------------------------
+*/
+@media (max-width: 1200px) {
+  body {
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "main main"
+      "footer footer";
   }
 
   .main-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .left-column, .right-column {
-    flex: 50%;
-    align-items: center;
-  }
-
-  .main-header {
-    padding: 2rem;
-    border-radius: 5%;
-    text-align: center;
-    color: black;
-    font-size: 2.5rem;
-    padding-top: 6rem;
-  }
-
-  .main-paragraph {
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  /* CSS Grid Layout */
-  body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    min-height: 100vh;
-  }
-  
-  header {
-    grid-area: header;
-  }
-  
-  main {
-    grid-area: main;
-  }
-  
-  footer {
-    grid-area: footer;
-  }
-  
-  /* Images */
-  figure {
-    margin: 1rem 0;
-  }
-  
-  figure img {
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    height: 50vh;
-    align-items: center;
-    display: block;
-    border-radius: 5%;
-  }
-  
-  figcaption {
-    font-style: italic;
-    text-align: center;
-  }
-  
-  a:hover {
-    color: #fff; 
-  }
-
-/* Media query for larger screens */
-@media (max-width: 1200px) {
-body {
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-    "header header"
-    "main main"
-    "footer footer";
-}
-.main-content {
     flex-direction: column;
     align-items: center;
   }
+  
   .column {
     flex: 100%;
     padding: 0rem 1rem;
   }
+  
   .main-header {
     font-size: 1.5rem;
     padding-top: 2rem;
   }
+  
   .main-paragraph {
     font-size: 1rem;
   }
 
   figure img { 
     width: auto;
-    height: 40vh;
+    height: 35vh;
     border-radius: 5%;
   }
 }
 
-/* Characters Page Styles */
-    /* Grid styling */
-
-    .character-container {
-      display: grid;
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .character-header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .character-article {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .character-section {
-      background: #fff;
-      padding: 16px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .character-figure {
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    .character-figure img {
-      width: 100%;
-      height: fit-content;
-      border-radius: 4px;
-    }
-
-    .character-figcaption {
-      font-style: italic;
-      margin-top: 4px;
-    }
-
-    h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.2rem;
-    }
-
-    .character-p {
-      margin-top: 0;
-    }
-
-@media (max-width: 600px) {
-
-  .character-container {
+/* 
+---------------------------------
+>= 900px
+---------------------------------
+*/
+@media (max-width: 900px) {
+  .main-content {
     grid-template-columns: 1fr;
-  }
-
-  .character-article {
-    grid-template-columns: 1fr;
-}
-}
-
-@media (min-width: 768px) {
-
-  .character-article {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "first"
+      "second"
+      "third";
   }
 }
 
+/* 
+---------------------------------
+>= 750px
+---------------------------------
+*/
 @media (max-width: 750px) {
-    .topnav {
+  .topnav {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -280,7 +271,7 @@ body {
     display: block; 
   }
 
- .topnav.responsive ul {
+  .topnav.responsive ul {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -293,10 +284,89 @@ body {
   }
 }
 
-/* Plot Page CSS */
+/* 
+---------------------------------
+>= 600px
+---------------------------------
+*/
+@media (max-width: 600px) {
+  .character-container {
+    grid-template-columns: 1fr;
+  }
+
+  .character-article {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 
+==========================================================
+CHARACTERS PAGE STYLES
+==========================================================
+*/
+.character-container {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.character-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.character-header h3 {
+  padding-top: 2rem;
+}
+
+.character-article {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.character-section {
+  background: #fff;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.character-figure {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.character-figure img {
+  width: 100%;
+  height: fit-content;
+  border-radius: 4px;
+}
+
+.character-figcaption {
+  font-style: italic;
+  margin-top: 4px;
+}
+
+h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.character-p {
+  margin-top: 0;
+}
+
+/* 
+==========================================================
+PLOT PAGE STYLES
+==========================================================
+*/
 .plot-main {
   height: auto;
 }
+
 .plot-header {
   text-align: center;
   margin-bottom: 20px;
@@ -314,6 +384,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 .references-list a {
   text-decoration: none;
   color: rgba(74, 65, 65, 0.75);
